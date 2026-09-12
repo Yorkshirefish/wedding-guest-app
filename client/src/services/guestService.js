@@ -1,11 +1,11 @@
-const API_URI = "http://localhost:5001"
+const API_URI = "http://localhost:5001/api/guests/"
 
 //Function that calls all guests
 export async function getGuests() {
     const response = await fetch(API_URI);
 
     if(!response.ok) {
-        throw new Error("Failed to get books");
+        throw new Error("Failed to get guests");
     }
 
     return response.json();

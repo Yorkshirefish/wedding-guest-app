@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { GuestsPage } from "./pages/guestsPage"
 
 function App() {
   return (
     <>
+      <GuestsPage/>
     </>
   )
 }
