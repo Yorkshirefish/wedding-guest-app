@@ -13,11 +13,9 @@ export function useGuests() {
 
     useEffect(() => {
         async function loadGuests() {
-            console.log("Running Test")
             try {
                 const guests = await getGuests();
                 setGuests(guests);
-                console.log("Guests Set")
             } catch(e) {
                 throw new Error(e)
             } finally {
@@ -28,9 +26,30 @@ export function useGuests() {
         loadGuests();
     }, [])
 
+    async function addGuest(guest) {
+        const newGuest = addGuest(guest);
+
+        setGuests((prev) => [...prev, newGuest])
+    }
+
+    async function deleteGuest(id) {
+        const deletedGuest = await removeGuest(id)
+
+        setGuests((prev) => prev.filter((guest) => guest._id !== id))
+    }
+
+    async function updateGuest(id, update) {
+        const updatedGuest = await editGuest(id, update);
+
+        setGuests((prev) => prev.map((guest) => guest._id === id ? updateGuest : guest))
+    }
+
 
     return {
         guests,
-        loading
+        loading,
+        addGuest,
+        deleteGuest,
+        updateGuest
     }
 }

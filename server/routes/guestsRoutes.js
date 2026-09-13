@@ -32,7 +32,7 @@ const createGuestsRouter = (guestCollection) => {
     router.delete("/:id", async (req, res) => {
 
         const result = await guestCollection.deleteOne({_id: new ObjectId(req.params.id)})
-        res.status(204).json(result)
+        res.status(204).send();
     })
 
     return router;

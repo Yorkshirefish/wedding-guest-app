@@ -36,8 +36,6 @@ export async function deleteGuest(id) {
     if(!response.ok) {
         throw new Error("Failed to remove guest")
     }
-
-    return response.json();
 }
 
 //Function to update a Guest's info
