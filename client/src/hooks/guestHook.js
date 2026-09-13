@@ -40,8 +40,10 @@ export function useGuests() {
 
     async function updateGuest(id, update) {
         const updatedGuest = await editGuest(id, update);
+        const {key, value} = update;
 
-        setGuests((prev) => prev.map((guest) => guest._id === id ? updatedGuest : guest))
+
+        setGuests((prev) => prev.map((guest) => guest._id === id ? {...guest, ...updatedGuest} : guest))
     }
 
 

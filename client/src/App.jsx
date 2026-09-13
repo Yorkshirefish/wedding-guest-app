@@ -1,9 +1,9 @@
-import { GuestsPage } from "./pages/guestsPage"
+import { GuestDashboard } from "./pages/guestDashboard"
 
 function App() {
   return (
     <>
-      <GuestsPage/>
+      <GuestDashboard/>
     </>
   )
 }
