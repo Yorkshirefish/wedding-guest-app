@@ -1,6 +1,5 @@
 import { useGuests } from "../../hooks/guestHook";
-
-useGuests
+import SideBar from "../layouts/sidebar";
 
 
 
@@ -16,6 +15,8 @@ export function GuestDashboard() {
 
     return (
         <>
+        <SideBar/>
+        <h1>Hello</h1>
         </>
     )
 }

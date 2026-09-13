@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --color-green-wedding: #B8B68F;
+    --color-cream-wedding: #EBE6D2;
+    --color-light-grey-wedding: #DBD3C6;
+    --color-yellow-wedding: #DECCA6;
+    --color-brown-wedding: #D0C0A7;
+}
