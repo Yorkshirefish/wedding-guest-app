@@ -11,16 +11,23 @@ export function GuestsPage() {
         updateGuest
      } = useGuests();
 
-     function removeGuest(id) {
-        deleteGuest(id);
+     async function newGuest(guest) {
+        await addGuest(guest);
         console.log(guests);
      }
 
-    console.log(guests);
 
     return (
         <>
-            <button onClick={() => removeGuest("6aa6b684cf9303f4766a475c")}>Click to delete Test</button>
+            <button onClick={() => newGuest({"first_name": "Test",
+  "last_name": "Test",
+  "side": "Bride",
+  "guest_type": "Normal Guest",
+  "dayType": "Full day",
+  "age_category": "Adult",
+  "relation": "Friend",
+  "rsvp": "Not Sent",
+  "status": "Safe"})}>Click to delete Test</button>
         </>
     )
 }

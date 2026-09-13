@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { 
     getGuests,
-    addGuest as newGuest,
+    addGuest as createGuest,
     deleteGuest as removeGuest,
     updateGuest as editGuest
 
@@ -27,13 +27,13 @@ export function useGuests() {
     }, [])
 
     async function addGuest(guest) {
-        const newGuest = addGuest(guest);
+        const newGuest = await createGuest(guest);
 
         setGuests((prev) => [...prev, newGuest])
     }
 
     async function deleteGuest(id) {
-        const deletedGuest = await removeGuest(id)
+        await removeGuest(id)
 
         setGuests((prev) => prev.filter((guest) => guest._id !== id))
     }
@@ -41,7 +41,7 @@ export function useGuests() {
     async function updateGuest(id, update) {
         const updatedGuest = await editGuest(id, update);
 
-        setGuests((prev) => prev.map((guest) => guest._id === id ? updateGuest : guest))
+        setGuests((prev) => prev.map((guest) => guest._id === id ? updatedGuest : guest))
     }
 
 
