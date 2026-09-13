@@ -1,4 +1,4 @@
-import { GuestDashboard } from "./pages/guestDashboard"
+import { GuestDashboard } from "./components/pages/guestDashboard"
 
 function App() {
   return (

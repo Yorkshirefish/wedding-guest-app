@@ -1,4 +1,6 @@
-import { useGuests } from "../hooks/guestHook"
+import { useGuests } from "../../hooks/guestHook";
+
+useGuests
 
 
 
