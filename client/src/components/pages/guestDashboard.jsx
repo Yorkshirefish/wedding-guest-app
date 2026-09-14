@@ -14,9 +14,9 @@ export function GuestDashboard() {
 
 
     return (
-        <>
+        <div className="h-full">
         <SideBar/>
         <h1>Hello</h1>
-        </>
+        </div>
     )
 }
