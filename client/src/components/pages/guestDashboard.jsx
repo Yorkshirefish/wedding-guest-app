@@ -1,5 +1,6 @@
 import { useGuests } from "../../hooks/guestHook";
 import SideBar from "../layouts/sidebar";
+import { Dashboard } from "../layouts/dashboard";
 
 
 
@@ -14,9 +15,9 @@ export function GuestDashboard() {
 
 
     return (
-        <div className="h-full">
-        <SideBar/>
-        <h1>Hello</h1>
+        <div className="h-full flex flex-row">
+            <SideBar/>
+            <Dashboard />
         </div>
     )
 }

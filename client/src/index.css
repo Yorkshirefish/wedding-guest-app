@@ -7,3 +7,15 @@
     --color-yellow-wedding: #DECCA6;
     --color-brown-wedding: #D0C0A7;
 }
+
+/*Counter Container*/
+
+.count-cont {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    align-items: center;
+    background: #DBD3C6;
+    padding: 20px;
+    border-radius: 15px;
+}
