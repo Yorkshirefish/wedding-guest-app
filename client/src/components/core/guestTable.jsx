@@ -1,0 +1,18 @@
+
+
+export function GuestTable() {
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Side</th>
+                    <th>Relationship</th>
+                    <th>Day Type</th>
+                    <th>RSVP</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    )
+}
