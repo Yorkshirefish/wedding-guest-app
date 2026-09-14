@@ -9,6 +9,7 @@ export function GuestTable() {
                     <th>Side</th>
                     <th>Relationship</th>
                     <th>Day Type</th>
+                    <th>Guest Type</th>
                     <th>RSVP</th>
                     <th>Action</th>
                 </tr>
