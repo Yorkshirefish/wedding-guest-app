@@ -1,4 +1,5 @@
 import { GuestTable } from "../core/guestTable"
+import GuestForm from "../forms/guestForm"
 
 
 export function Dashboard() {
@@ -17,19 +18,19 @@ export function Dashboard() {
             {/*Filter Section*/}
             <div id="filter-section">
                 <input type="text" placeholder="Search for guest"></input>
-                <select name="sides" id="sides">
+                <select name="side" id="side">
                     <option value="" disabled>Select side</option>
                     <option value="Bride">Bride</option>
                     <option value="Groom">Groom</option>
                 </select>
-                <select name="relationship" id="relationship">
+                <select name="relation" id="relation">
                     <option value="" disabled>Select relation</option>
                     <option value="Family">Family</option>
                     <option value="Friend">Friend</option>
                     <option value="Work">Work</option>
                     <option value="Other">Other</option>
                 </select>
-                <select name="day-type" id="day-type">
+                <select name="day_type" id="day_type">
                     <option value="" disabled>Select day type</option>
                     <option value="Full Day">Full Day</option>
                     <option value="Night Only">Night Only</option>
@@ -63,6 +64,7 @@ export function Dashboard() {
 
             {/*Guest Table section*/}
              <GuestTable/>
+             <GuestForm  />
         </div>
     )
 }
