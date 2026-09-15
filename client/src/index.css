@@ -8,6 +8,72 @@
     --color-brown-wedding: #D0C0A7;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    background: #B8B68F;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: "Red Hat Display";
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFF;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #807e62;
+}
+
+/*Sidebar*/
+
+.sidebar-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #807e62;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    border: 1px solid #807e62;
+    transition: all 0.3s;
+}
+
+.sidebar-btn:hover {
+    background-color: #EBE6D2;
+}
+
+.sidebar-btn span {
+    font-family: "Red Hat Display";
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFF;
+    transition: all 0.3s;
+}
+
+.sidebar-btn:hover span {
+    color: #adab86;
+}
+
+.sidebar-btn i {
+    font-size: 18px;
+    color: #FFF;
+    transition: all 0.3s;
+}
+
+.sidebar-btn:hover i {
+    color: #adab86;
+}
+
 /*Counter Container*/
 
 .count-cont {
