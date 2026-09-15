@@ -1,6 +1,6 @@
 
 
-export function GuestTable() {
+export default function GuestTable() {
     return (
         <table>
             <thead>

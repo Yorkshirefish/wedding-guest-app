@@ -1,5 +1,7 @@
-import { GuestTable } from "../core/guestTable"
+import GuestTable from "../core/guestTable"
 import GuestForm from "../forms/guestForm"
+import GuestFitlers from "../core/guestFilters"
+
 
 
 export function Dashboard() {
@@ -12,30 +14,11 @@ export function Dashboard() {
                     <h1>Guests</h1>
                     <p>Add, edit and manage guests for our upcoming 2028 wedding!</p>
                 </div>
-                <button className="sidebar-btn"><i className="fa-solid fa-plus"></i><span>Add Guest</span></button>
+                <button className="btn"><i className="fa-solid fa-plus"></i><span>Add Guest</span></button>
             </div>
             
             {/*Filter Section*/}
-            <div id="filter-section">
-                <input type="text" placeholder="Search for guest"></input>
-                <select name="side" id="side">
-                    <option value="" disabled>Select side</option>
-                    <option value="Bride">Bride</option>
-                    <option value="Groom">Groom</option>
-                </select>
-                <select name="relation" id="relation">
-                    <option value="" disabled>Select relation</option>
-                    <option value="Family">Family</option>
-                    <option value="Friend">Friend</option>
-                    <option value="Work">Work</option>
-                    <option value="Other">Other</option>
-                </select>
-                <select name="day_type" id="day_type">
-                    <option value="" disabled>Select day type</option>
-                    <option value="Full Day">Full Day</option>
-                    <option value="Night Only">Night Only</option>
-                </select>
-            </div>
+            <GuestFitlers />
 
             {/*Guest Count Section*/}
             <div id="guest-count" className="flex flex-row gap-5">

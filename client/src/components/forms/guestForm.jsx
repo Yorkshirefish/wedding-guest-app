@@ -51,6 +51,7 @@ export default function GuestForm({guest = {}}) {
                     <label htmlFor="relation">Relationship</label>
                     <select onChange={handleChange} value={form.relation} name="relation" id="relation" required>
                         <option value="" disabled>Select relation</option>
+                        <option value="Bride/Groom">Bride/Groom</option>
                         <option value="Family">Family</option>
                         <option value="Friend">Friend</option>
                         <option value="Work">Work</option>
