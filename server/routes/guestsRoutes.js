@@ -15,6 +15,8 @@ const createGuestsRouter = (guestCollection) => {
     router.post("/", async (req,res) => {
         const guest = req.body;
 
+        const check = await guestCollection.find({first_name: guest.first_name})
+
         const result = await guestCollection.insertOne(guest);
 
         guest._id = result.insertedId;

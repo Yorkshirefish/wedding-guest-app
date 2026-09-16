@@ -85,3 +85,8 @@ button:hover {
     padding: 20px;
     border-radius: 15px;
 }
+
+.count-cont i {
+    font-size: 35px;
+    background: black;
+}

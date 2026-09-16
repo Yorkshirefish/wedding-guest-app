@@ -3,9 +3,14 @@ import GuestForm from "../forms/guestForm"
 import GuestFitlers from "../core/guestFilters"
 import GuestCount from "../core/guestCount"
 
-
+import { useGuests } from "../../hooks/guestHook"
 
 export function Dashboard() {
+
+    const {guests} = useGuests()
+
+    console.log(guests)
+
     return (
         <div className="w-full h-full p-10">
             
