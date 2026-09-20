@@ -86,7 +86,15 @@ button:hover {
     border-radius: 15px;
 }
 
+.icon-cont {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .count-cont i {
     font-size: 35px;
-    background: black;
 }
