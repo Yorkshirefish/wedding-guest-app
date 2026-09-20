@@ -6,8 +6,8 @@ export default function GuestCount() {
                     <i className="fa-light fa-people-group"></i>
                 </div>
                 <div>
-                    <p>Total Guests</p>
-                    <p>100</p>
+                    <p className="count-title">Total Guests</p>
+                    <p className="count-number">100</p>
                 </div>
             </div>
             <div className="count-cont">
@@ -15,8 +15,8 @@ export default function GuestCount() {
                     <i className="fa-regular fa-venus"></i>
                 </div>
                 <div>
-                    <p>Bride's Side</p>
-                    <p>100</p>
+                    <p className="count-title">Bride's Side</p>
+                    <p className="count-number">100</p>
                 </div>
             </div>
             <div className="count-cont">
@@ -24,8 +24,8 @@ export default function GuestCount() {
                     <i className="fa-regular fa-mars-stroke"></i>
                 </div>
                 <div>
-                    <p>Groom's Side</p>
-                    <p>100</p>
+                    <p className="count-title">Groom's Side</p>
+                    <p className="count-number">100</p>
                 </div>
             </div>
         </div>  

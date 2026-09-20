@@ -79,16 +79,17 @@ button:hover {
 .count-cont {
     display: flex;
     flex-direction: row;
-    column-gap: 20px;
+    column-gap: 40px;
     align-items: center;
     background: #DBD3C6;
     padding: 20px;
     border-radius: 15px;
+    min-width: 300px;
 }
 
 .icon-cont {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 100px;
     display: flex;
     justify-content: center;
@@ -97,4 +98,18 @@ button:hover {
 
 .count-cont i {
     font-size: 35px;
+}
+
+.count-title {
+    font-family: "Red Hat Display";
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+}
+
+.count-number {
+    font-family: "red Hat Display";
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 1.5px;
 }
