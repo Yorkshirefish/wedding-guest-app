@@ -5,9 +5,13 @@ import GuestCount from "../core/guestCount"
 
 import { useGuests } from "../../hooks/guestHook"
 
-export default function Dashboard() {
+export default function Dashboard({toggleVisibility}) {
 
     const {guests} = useGuests()
+
+    function handleAdd() {
+        toggleVisibility()
+    }
 
     console.log(guests)
 
@@ -20,7 +24,7 @@ export default function Dashboard() {
                     <h1 className="text-5xl font-normal mb-6" >Guests</h1>
                     <p className="text-xl mb-10">Add, edit and manage guests for our upcoming 2028 wedding!</p>
                 </div>
-                <button className="btn max-h-12.5"><i className="fa-solid fa-plus"></i><span>Add Guest</span></button>
+                <button onClick={handleAdd} className="btn max-h-12.5"><i className="fa-solid fa-plus"></i><span>Add Guest</span></button>
             </div>
             
             {/*Filter Section*/}

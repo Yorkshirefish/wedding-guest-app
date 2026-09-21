@@ -151,6 +151,10 @@ button:hover,
     border-radius: 8px;
 }
 
+.guest-table tbody tr:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
 
 /*Filter Section*/
 
