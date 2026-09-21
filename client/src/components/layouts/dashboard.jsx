@@ -17,8 +17,8 @@ export function Dashboard() {
             {/*Intro Seciton and Add Guest Button*/}
             <div id="intro-section" className="flex flex-row justify-between">
                 <div>
-                    <h1>Guests</h1>
-                    <p>Add, edit and manage guests for our upcoming 2028 wedding!</p>
+                    <h1 className="text-5xl font-normal mb-6" >Guests</h1>
+                    <p className="text-xl mb-10">Add, edit and manage guests for our upcoming 2028 wedding!</p>
                 </div>
                 <button className="btn"><i className="fa-solid fa-plus"></i><span>Add Guest</span></button>
             </div>

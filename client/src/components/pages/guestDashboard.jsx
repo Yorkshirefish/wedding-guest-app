@@ -15,7 +15,7 @@ export function GuestDashboard() {
 
 
     return (
-        <div className="h-full flex flex-row p-5">
+        <div className="h-full flex flex-row p-5 bg-cream-wedding min-h-screen">
             <SideBar/>
             <Dashboard />
         </div>
