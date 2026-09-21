@@ -1,7 +1,7 @@
 
 export default function GuestFitlers() {
     return (
-        <div id="filter-section">
+        <div id="filter-section" className="mb-10">
             <input type="text" placeholder="Search for guest"></input>
             <select name="side" id="side">
                 <option value="" >All Sides</option>

@@ -1,8 +1,8 @@
-
+import GuestItem from "./guestItem"
 
 export default function GuestTable({guests}) {
     return (
-        <table>
+        <table className="guest-table w-full ">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -14,6 +14,9 @@ export default function GuestTable({guests}) {
                     <th>Action</th>
                 </tr>
             </thead>
+            <tbody>
+                {guests.map((guest) => <GuestItem guest={guest} key={guest._id}/>)}
+            </tbody>
         </table>
     )
 }
