@@ -31,7 +31,6 @@ export function Dashboard() {
 
             {/*Guest Table section*/}
              <GuestTable/>
-             <GuestForm  />
         </div>
     )
 }
