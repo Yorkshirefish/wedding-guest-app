@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function GuestForm({guest = {}}) {
+export default function GuestForm({guest = {}, visibility}) {
 
     const [form, setForm] = useState({
         first_name: guest.first_name || "",
@@ -17,6 +17,10 @@ export default function GuestForm({guest = {}}) {
     function handleChange({target}) {
         const {name, value } = target;
         setForm((prev) => ({...prev, [name]: value }))
+    }
+
+    if(!visibility) {
+        return 
     }
 
 

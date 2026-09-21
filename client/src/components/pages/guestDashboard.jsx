@@ -1,23 +1,26 @@
-import { useGuests } from "../../hooks/guestHook";
+import { useState } from "react";
+
 import SideBar from "../layouts/sidebar";
-import { Dashboard } from "../layouts/dashboard";
+import Dashboard from "../layouts/dashboard";
+import GuestForm from "../forms/guestForm";
+
+
 
 
 
 export function GuestDashboard() {
-    const { 
-        guests,
-        loading,
-        addGuest,
-        deleteGuest,
-        updateGuest
-     } = useGuests();
 
+    const[formVisibility, setFormVisibility] = useState(false);
+
+    function toggleVisibility() {
+        setFormVisibility((prev) => !prev);
+    }
 
     return (
         <div className="h-full flex flex-row p-5 bg-cream-wedding min-h-screen">
-            <SideBar/>
+            <SideBar toggleVisibility={toggleVisibility}/>
             <Dashboard />
+            <GuestForm visibility={formVisibility}/>
         </div>
     )
 }

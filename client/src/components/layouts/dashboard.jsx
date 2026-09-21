@@ -5,7 +5,7 @@ import GuestCount from "../core/guestCount"
 
 import { useGuests } from "../../hooks/guestHook"
 
-export function Dashboard() {
+export default function Dashboard() {
 
     const {guests} = useGuests()
 
