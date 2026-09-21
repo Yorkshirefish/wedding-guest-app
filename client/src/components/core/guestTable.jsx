@@ -2,7 +2,7 @@ import GuestItem from "./guestItem"
 
 export default function GuestTable({guests}) {
     return (
-        <table className="guest-table w-full ">
+        <table className="guest-table w-full mt-10">
             <thead>
                 <tr>
                     <th>Name</th>

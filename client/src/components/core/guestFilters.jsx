@@ -1,8 +1,8 @@
 
 export default function GuestFitlers() {
     return (
-        <div id="filter-section" className="mb-10">
-            <input type="text" placeholder="Search for guest"></input>
+        <div id="filter-section" className="mb-10 flex flex-row gap-5 filters">
+            <input type="text" placeholder="Search for guest..." className="min-w-100 border py-2 px-5 rounded-xl"></input>
             <select name="side" id="side">
                 <option value="" >All Sides</option>
                 <option value="Bride">Bride</option>

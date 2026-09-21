@@ -21,8 +21,10 @@ export default function GuestItem({guest}) {
                 {guest.rsvp}
             </td>
             <td>
-                <i className="fa-light fa-pencil"></i>
-                <i className="fa-regular fa-trash-can"></i>
+                <div className="flex flex-row gap-5">
+                    <i className="fa-light fa-pencil bg-cream-wedding text-black transition duration-300 hover:bg-green-wedding"></i>
+                    <i className="fa-regular fa-trash-can  bg-cream-wedding text-black transition duration-300 hover:bg-green-wedding"></i>
+                </div>
             </td>
         </tr>
     )
