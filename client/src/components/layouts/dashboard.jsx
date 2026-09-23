@@ -11,6 +11,8 @@ import { useGuests } from "../../hooks/guestHook"
 
 export default function Dashboard({toggleVisibility, formVisibility}) {
 
+    const [guest, setGuest] = useState({})
+
     const {
         guests,
         loading,
@@ -22,6 +24,11 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
     function handleAdd() {
         toggleVisibility()
     }
+
+    function editGuest(guest) {
+        setGuest(guest)
+    }
+
 
     console.log(guests)
 
@@ -44,10 +51,10 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
             <GuestCount/>  
 
             {/*Guest Table section*/}
-             <GuestTable guests={guests} deleteGuest={deleteGuest}/>
+             <GuestTable guests={guests} deleteGuest={deleteGuest} editGuest={editGuest} toggleVisibility={toggleVisibility}/>
 
             {/*Guest Add Form*/}
-             <GuestForm visibility={formVisibility} toggleVisibility={toggleVisibility} addGuest={addGuest}/>
+             <GuestForm visibility={formVisibility} toggleVisibility={toggleVisibility} guest={guest} addGuest={addGuest} updateGuest={updateGuest} editGuest={editGuest}/>
         </div>
     )
 }

@@ -1,18 +1,31 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
-export default function GuestForm({guest = {}, visibility, toggleVisibility, addGuest}) {
+export default function GuestForm({guest, visibility, toggleVisibility, addGuest, updateGuest, editGuest}) {
 
     const [form, setForm] = useState({
-        first_name: guest.first_name || "",
-        last_name: guest.last_name || "",
-        side: guest.side || "",
-        guest_type: guest.guest_type || "",
-        day_type: guest.day_type || "",
-        age_category: guest.age_category || "",
-        relation: guest.relation || "",
-        rsvp: guest.rsvp || ""
+        first_name: "",
+        last_name: "",
+        side: "",
+        guest_type: "",
+        day_type: "",
+        age_category: "",
+        relation: "",
+        rsvp: ""
     });
+
+    useEffect(() => {
+        setForm({
+            first_name: guest.first_name || "",
+            last_name: guest.last_name || "",
+            side: guest.side || "",
+            guest_type: guest.guest_type || "",
+            day_type: guest.day_type || "",
+            age_category: guest.age_category || "",
+            relation: guest.relation || "",
+            rsvp: guest.rsvp || ""
+        })
+    }, [guest])
 
     function handleChange({target}) {
         const {name, value } = target;
@@ -22,27 +35,36 @@ export default function GuestForm({guest = {}, visibility, toggleVisibility, add
     function handleCancel(e) {
         e.preventDefault();
 
+        editGuest({})
+
         toggleVisibility()
     }
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        addGuest(form)
+        if(guest._id) {
+            updateGuest(guest._id, form)
+            editGuest({})
+        } else {
+            addGuest(form)
+        }
 
         toggleVisibility()
     }
 
     if(!visibility) {
-        return 
+        return null;
     }
+
+    console.log(form)
 
 
     return (
         <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/40">
             <form onSubmit={handleSubmit} className="guest-form flex flex-col justify-end items-center min-w-150 bg-gray-200 p-10 rounded-xl gap-5">
 
-                <h3 className="text-2xl text-left w-full  font-normal">{!guest.length > 0 ? "Add Guest" : "Edit Guest"}</h3>
+                <h3 className="text-2xl text-left w-full  font-normal">{!guest._id ? "Add Guest" : "Edit Guest"}</h3>
 
 
                 {/*Name Section*/}
