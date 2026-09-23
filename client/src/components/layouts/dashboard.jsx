@@ -11,8 +11,7 @@ import { useGuests } from "../../hooks/guestHook"
 
 export default function Dashboard({toggleVisibility, formVisibility}) {
 
-    const [guest, setGuest] = useState({})
-
+    //This calls all the hooks functions
     const {
         guests,
         loading,
@@ -21,13 +20,35 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
         updateGuest
     } = useGuests()
 
+    //This state controls the filters
+    const [filters, setFilters] = useState({
+        side: "All",
+        relation: "All",
+        day_type: "All"
+    })
+
+    //This function allows the dropdowns to change the filters state
+    function changeFilter(name, value) {
+        setFilters((prev) => ( {...prev, [name]: value} ));
+    }
+
+    const filteredGuests = guests.filter((guest) => (filters.side === "All" || guest.side === filters.side) && (filters.relation === "All" || guest.relation === filters.relation) && (filters.day_type === "All" || guest.day_type === filters.day_type))
+
+    console.log(filteredGuests);
+
+    //This is a state that specifies is the guestForm is an edit guest or add guest form
+    const [guest, setGuest] = useState({})
+
+    //This allows us to set the guest state and is passed down to the guest item and tied with the edit button
+    function editGuest(guest) {
+        setGuest(guest)
+    }
+
+    //This function allows us to toggle the form on the add guest button
     function handleAdd() {
         toggleVisibility()
     }
 
-    function editGuest(guest) {
-        setGuest(guest)
-    }
 
     return (
         <div className="w-full h-full p-10">
@@ -42,13 +63,13 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
             </div>
             
             {/*Filter Section*/}
-            <GuestFitlers/>
+            <GuestFitlers changeFilter={changeFilter}/>
 
             {/*Guest Count Section*/}
-            <GuestCount guests={guests}/>  
+            <GuestCount guests={filteredGuests}/>  
 
             {/*Guest Table section*/}
-             <GuestTable guests={guests} deleteGuest={deleteGuest} editGuest={editGuest} toggleVisibility={toggleVisibility}/>
+             <GuestTable guests={filteredGuests} deleteGuest={deleteGuest} editGuest={editGuest} toggleVisibility={toggleVisibility}/>
 
             {/*Guest Add Form*/}
              <GuestForm visibility={formVisibility} toggleVisibility={toggleVisibility} guest={guest} addGuest={addGuest} updateGuest={updateGuest} editGuest={editGuest}/>
