@@ -29,9 +29,6 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
         setGuest(guest)
     }
 
-
-    console.log(guests)
-
     return (
         <div className="w-full h-full p-10">
             
@@ -45,10 +42,10 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
             </div>
             
             {/*Filter Section*/}
-            <GuestFitlers />
+            <GuestFitlers/>
 
             {/*Guest Count Section*/}
-            <GuestCount/>  
+            <GuestCount guests={guests}/>  
 
             {/*Guest Table section*/}
              <GuestTable guests={guests} deleteGuest={deleteGuest} editGuest={editGuest} toggleVisibility={toggleVisibility}/>

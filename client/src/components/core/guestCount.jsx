@@ -1,4 +1,10 @@
-export default function GuestCount() {
+
+
+export default function GuestCount({guests}) {
+
+    const groomCount = guests.filter((guest) => guest.side === "Groom") 
+    const brideCount = guests.filter((guest) => guest.side === "Bride")
+
     return (
         <div id="guest-count" className="flex flex-row gap-5">
             <div className="count-cont">
@@ -7,7 +13,7 @@ export default function GuestCount() {
                 </div>
                 <div>
                     <p className="count-title">Total Guests</p>
-                    <p className="count-number">100</p>
+                    <p className="count-number">{guests.length}</p>
                 </div>
             </div>
             <div className="count-cont">
@@ -16,7 +22,7 @@ export default function GuestCount() {
                 </div>
                 <div>
                     <p className="count-title">Bride's Side</p>
-                    <p className="count-number">100</p>
+                    <p className="count-number">{brideCount.length}</p>
                 </div>
             </div>
             <div className="count-cont">
@@ -25,7 +31,7 @@ export default function GuestCount() {
                 </div>
                 <div>
                     <p className="count-title">Groom's Side</p>
-                    <p className="count-number">100</p>
+                    <p className="count-number">{groomCount.length}</p>
                 </div>
             </div>
         </div>  
