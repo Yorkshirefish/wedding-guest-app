@@ -115,6 +115,7 @@ export default function GuestForm({guest, visibility, toggleVisibility, addGuest
                             <option value="Bride/Groom">Bride/Groom</option>
                             <option value="Groomsman">Groomsman</option>
                             <option value="Bridesmaid">Bridesmaid</option>
+                            <option value="Family">Family</option>
                             <option value="Normal Guest">Normal Guest</option>
                         </select>
                     </div>
@@ -155,7 +156,7 @@ export default function GuestForm({guest, visibility, toggleVisibility, addGuest
 
                 <div className="flex flex-row mt-8 justify-end">
                     <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
-                    <button className="btn" type="submit">Save Guest</button>
+                    <button className="btn green-btn" type="submit">Save Guest</button>
 
                 </div>
                 

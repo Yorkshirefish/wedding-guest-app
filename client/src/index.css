@@ -23,18 +23,21 @@ button:hover,
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background: #B8B68F;
     padding: 12px 20px;
     border-radius: 10px;
     font-family: "Red Hat Display";
     font-weight: 400;
     font-size: 16px;
-    color: #FFF;
     transition: all 0.3s;
 }
 
-.btn:hover {
-    background: #807e62;
+.green-btn {
+    background-color: #B8B68F;
+    color: #FFF;
+}
+
+.green-btn:hover {
+    background-color: #807e62;
 }
 
 /*Sidebar*/
@@ -224,4 +227,15 @@ button:hover,
 
 .guest-form .cancel-btn:hover {
     background: grey;
+}
+
+/*Confirm Delete*/
+
+.confirm-btn {
+    background-color: #807e62;
+    color: #FFF;
+}
+
+.confirm-btn:hover {
+    background-color: #B8B68F;
 }
