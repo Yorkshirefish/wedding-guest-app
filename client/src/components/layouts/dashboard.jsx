@@ -5,9 +5,17 @@ import GuestCount from "../core/guestCount"
 
 import { useGuests } from "../../hooks/guestHook"
 
+
+
 export default function Dashboard({toggleVisibility}) {
 
-    const {guests} = useGuests()
+    const {
+        guests,
+        loading,
+        addGuest,
+        deleteGuest,
+        updateGuest
+    } = useGuests()
 
     function handleAdd() {
         toggleVisibility()
@@ -34,7 +42,7 @@ export default function Dashboard({toggleVisibility}) {
             <GuestCount/>  
 
             {/*Guest Table section*/}
-             <GuestTable guests={guests}/>
+             <GuestTable guests={guests} deleteGuest={deleteGuest}/>
         </div>
     )
 }
