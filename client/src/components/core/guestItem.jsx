@@ -1,8 +1,8 @@
 
-export default function GuestItem({guest, deleteGuest, editGuest, toggleVisibility}) {
+export default function GuestItem({guest, editGuest, toggleVisibility, showConfirmDelete}) {
 
     function handleDelete() {
-        deleteGuest(guest._id)
+        showConfirmDelete(guest);
     }
 
     function handleEdit() {
