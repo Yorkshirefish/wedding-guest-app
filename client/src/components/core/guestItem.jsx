@@ -1,5 +1,10 @@
 
-export default function GuestItem({guest}) {
+export default function GuestItem({guest, deleteGuest}) {
+
+    function handleDelete() {
+        deleteGuest(guest._id)
+    }
+
     return (
         <tr>
             <td>
@@ -23,7 +28,7 @@ export default function GuestItem({guest}) {
             <td>
                 <div className="flex flex-row gap-5">
                     <i className="fa-light fa-pencil bg-cream-wedding text-black transition duration-300 hover:bg-green-wedding"></i>
-                    <i className="fa-regular fa-trash-can  bg-cream-wedding text-black transition duration-300 hover:bg-green-wedding"></i>
+                    <i onClick={handleDelete} className="fa-regular fa-trash-can  bg-cream-wedding text-black transition duration-300 hover:bg-green-wedding"></i>
                 </div>
             </td>
         </tr>

@@ -1,6 +1,6 @@
 import GuestItem from "./guestItem"
 
-export default function GuestTable({guests}) {
+export default function GuestTable({guests, deleteGuest}) {
     return (
         <table className="guest-table w-full mt-10">
             <thead>
@@ -15,7 +15,7 @@ export default function GuestTable({guests}) {
                 </tr>
             </thead>
             <tbody>
-                {guests.map((guest) => <GuestItem guest={guest} key={guest._id}/>)}
+                {guests.map((guest) => <GuestItem guest={guest} key={guest._id} deleteGuest={deleteGuest}/>)}
             </tbody>
         </table>
     )
