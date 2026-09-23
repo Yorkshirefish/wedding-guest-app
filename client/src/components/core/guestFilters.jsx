@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 
 export default function GuestFitlers({changeFilter}) {
 
@@ -11,7 +9,7 @@ export default function GuestFitlers({changeFilter}) {
 
     return (
         <div id="filter-section" className="mb-10 flex flex-row gap-5 filters">
-            <input type="text" placeholder="Search for guest..." className="min-w-100 border py-2 px-5 rounded-xl"></input>
+            <input onChange={handleChange} name="search" type="text" placeholder="Search for guest..." className="min-w-100 border py-2 px-5 rounded-xl"></input>
             <select onChange={handleChange} name="side" id="side">
                 <option value="All" >All Sides</option>
                 <option value="Bride">Bride</option>

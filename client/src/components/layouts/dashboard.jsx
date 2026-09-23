@@ -22,6 +22,7 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
 
     //This state controls the filters
     const [filters, setFilters] = useState({
+        search: "",
         side: "All",
         relation: "All",
         day_type: "All"
@@ -32,7 +33,8 @@ export default function Dashboard({toggleVisibility, formVisibility}) {
         setFilters((prev) => ( {...prev, [name]: value} ));
     }
 
-    const filteredGuests = guests.filter((guest) => (filters.side === "All" || guest.side === filters.side) && (filters.relation === "All" || guest.relation === filters.relation) && (filters.day_type === "All" || guest.day_type === filters.day_type))
+    /*This creates a variable based off the filtered values and is passed down to the Table and Count*/
+    const filteredGuests = guests.filter((guest) => (filters.search === "" || guest.first_name.startsWith(filters.search) || guest.last_name.startsWith(filters.search)) && (filters.side === "All" || guest.side === filters.side) && (filters.relation === "All" || guest.relation === filters.relation) && (filters.day_type === "All" || guest.day_type === filters.day_type))
 
     console.log(filteredGuests);
 
