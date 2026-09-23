@@ -48,6 +48,7 @@ export default function GuestForm({guest, visibility, toggleVisibility, addGuest
             editGuest({})
         } else {
             addGuest(form)
+            editGuest({})
         }
 
         toggleVisibility()
