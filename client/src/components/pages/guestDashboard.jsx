@@ -19,8 +19,7 @@ export function GuestDashboard() {
     return (
         <div className="h-full flex flex-row p-5 bg-cream-wedding min-h-screen">
             <SideBar toggleVisibility={toggleVisibility}/>
-            <Dashboard toggleVisibility={toggleVisibility}/>
-            <GuestForm visibility={formVisibility} toggleVisibility={toggleVisibility}/>
+            <Dashboard toggleVisibility={toggleVisibility} formVisibility={formVisibility}/>
         </div>
     )
 }

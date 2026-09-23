@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import GuestTable from "../core/guestTable"
 import GuestForm from "../forms/guestForm"
 import GuestFitlers from "../core/guestFilters"
@@ -7,7 +9,7 @@ import { useGuests } from "../../hooks/guestHook"
 
 
 
-export default function Dashboard({toggleVisibility}) {
+export default function Dashboard({toggleVisibility, formVisibility}) {
 
     const {
         guests,
@@ -43,6 +45,9 @@ export default function Dashboard({toggleVisibility}) {
 
             {/*Guest Table section*/}
              <GuestTable guests={guests} deleteGuest={deleteGuest}/>
+
+            {/*Guest Add Form*/}
+             <GuestForm visibility={formVisibility} toggleVisibility={toggleVisibility} addGuest={addGuest}/>
         </div>
     )
 }

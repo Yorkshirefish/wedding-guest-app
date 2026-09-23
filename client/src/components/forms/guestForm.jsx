@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function GuestForm({guest = {}, visibility, toggleVisibility}) {
+export default function GuestForm({guest = {}, visibility, toggleVisibility, addGuest}) {
 
     const [form, setForm] = useState({
         first_name: guest.first_name || "",
@@ -25,6 +25,14 @@ export default function GuestForm({guest = {}, visibility, toggleVisibility}) {
         toggleVisibility()
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        addGuest(form)
+
+        toggleVisibility()
+    }
+
     if(!visibility) {
         return 
     }
@@ -32,7 +40,7 @@ export default function GuestForm({guest = {}, visibility, toggleVisibility}) {
 
     return (
         <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/40">
-            <form className="guest-form flex flex-col justify-end items-center min-w-150 bg-gray-200 p-10 rounded-xl gap-5">
+            <form onSubmit={handleSubmit} className="guest-form flex flex-col justify-end items-center min-w-150 bg-gray-200 p-10 rounded-xl gap-5">
 
                 <h3 className="text-2xl text-left w-full  font-normal">{!guest.length > 0 ? "Add Guest" : "Edit Guest"}</h3>
 
